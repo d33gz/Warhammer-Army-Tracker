@@ -1,6 +1,7 @@
 const topSection = document.getElementById('top');
 const middleSectionBrain = document.getElementById('middle-brain');
 const middleSectionGuts = document.getElementById('middle-guts');
+const scrollSection = document.getElementById('scroller');
 const bottomSection = document.getElementById('bottom');
 const createArmyButton = document.getElementById('create-army');
 const editArmyButton = document.getElementById('edit-army');
@@ -18,13 +19,11 @@ editArmyButton.onclick = () => {
   fillGutsWithModel();
   disableTopButtons();
   revealBottom();
+  addScrollButtons();
 };
 
 resetButton.onclick = () => {
-  middleSectionBrain.innerHTML = "";
-  middleSectionGuts.innerHTML = "";
-  enableTopButtons();
-  bottomSection.style.visibility = 'hidden';
+  resetPage();
 };
 
 const disableTopButtons = () => {
@@ -41,26 +40,52 @@ const revealBottom = () => {
   bottomSection.style.visibility = 'visible';
 };
 
-const fillGutsWithModel = () => {
-  let entryName = genestealer.name;
-  let entryQuantity = genestealer.quantity;
-  let entryPaintName = genestealer.paintScheme[0].paintName;
-  let entryPaintCoats = genestealer.paintScheme[0].coats;
-  let entryPaintLocation = genestealer.paintScheme[0].location;
-  middleSectionGuts.innerHTML = `<h3>Model Name: ${entryName}</h3><p>Quantity of Model: ${entryQuantity}</p><p>Paint Name: ${entryPaintName}</p><p>Coats: ${entryPaintCoats}</p><p>Paint Location: ${entryPaintLocation}</p>`;
+const resetPage = () => {
+  middleSectionBrain.innerHTML = "";
+  middleSectionGuts.innerHTML = "";
+  scrollSection.innerHTML = "";
+  enableTopButtons();
+  bottomSection.style.visibility = 'hidden';
 };
 
-let genestealer = {
-  name: "Genestealer",
-  quantity: 8,
-  gear: [null],
-  stats: [null],
-  cost: null,
-  paintScheme: [{
-    paintName: "Skeleton Horde",
-    coats: 2,
-    location: "Whole body"
-  }]
+
+const addScrollButtons = () => {
+  if (army.length === 1) {
+    scrollSection.innerHTML = '<h3> nutin\' here, boss</h3>'; 
+  } else {
+    scrollSection.innerHTML = "<button id='scroll-left' type='submit'><</button><button id='scroll-right' type='submit'>></button>";
+    const scrollRight = document.getElementById('scroll-left');
+    const scrollLeft = document.getElementById('scroll-right');
+    if (scrollSection > army.length) {
+      scrollRight.disabled = true;
+      scrollLeft.disabled = false;
+    } else if (scrollSection < army.length) {
+      scrollRight.disabled = false;
+      scrollLeft.disabled = true;
+    } else {
+      scrollRight.disabled = false;
+      scrollLeft.disabled = false;
+    };
+    scrollRight.onclick = () => {
+      scrollIndex ++;
+      fillGutsWithModel();
+    };
+    scrollLeft.onclick = () => {
+      scrollIndex --;
+      fillGutsWithModel();
+    };
+  };
+};
+
+let scrollIndex = 1;
+
+const fillGutsWithModel = () => { 
+  let entryName = army[scrollIndex - 1].name;
+  let entryQuantity = army[scrollIndex - 1].quantity;
+  let entryPaintName = army[scrollIndex - 1].paintScheme[0].paintName;
+  let entryPaintCoats = army[scrollIndex - 1].paintScheme[0].coats;
+  let entryPaintLocation = army[scrollIndex - 1].paintScheme[0].location;
+  middleSectionGuts.innerHTML = `<h3>Model Name: ${entryName}</h3><p>Quantity of Model: ${entryQuantity}</p><p>Paint Name: ${entryPaintName}</p><p>Coats: ${entryPaintCoats}</p><p>Paint Location: ${entryPaintLocation}</p>`;
 };
 
 const fillGutsWithForm = () => {
@@ -73,17 +98,14 @@ const fillGutsWithForm = () => {
     let modelPaintName = document.getElementById('create-model-paintName').value;
     let modelCoats = document.getElementById('create-model-coats').value;
     let modelLocation = document.getElementById('create-model-location').value;
-    console.log(modelName)
-    console.log(document.getElementById('create-model-name'))
-    console.log(document.getElementById('create-model-name').value)
     let newModel = masterFigure;
     newModel.name = modelName;
     newModel.model = modelQuantity;
     newModel.paintScheme[0].paintName = modelPaintName;
     newModel.paintScheme[0].coats = modelCoats;
     newModel.paintScheme[0].location = modelLocation;
-    console.log('MF 2');
-    console.log(newModel);
+    army.push(newModel);
+    resetPage();
   };
 };
 
@@ -99,3 +121,18 @@ let masterFigure = {
     location: ""
   }]
 };
+
+let army = [
+  {
+    name: "Genestealer",
+    quantity: 8,
+    gear: [null],
+    stats: [null],
+    cost: null,
+    paintScheme: [{
+      paintName: "Skeleton Horde",
+      coats: 2,
+      location: "Whole body"
+    }]
+  }
+];

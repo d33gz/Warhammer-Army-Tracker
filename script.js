@@ -4,6 +4,7 @@
   /*
     let masterFigure = {
       name: "",
+      quantity: null,
       gear: [],
       stats: [],
       cost: null,
@@ -12,6 +13,7 @@
   */
   
   //name is for the name of the figurine
+  //quantity is for how many figurines of that model a user has
   //gear is an array for tracking each piece of gear (as an object with name/cost/stats/etc)
   //stats is for tracking each stat on a unit (ex. WS,BS,S,T,etc)
   //cost is the total points cost for a given model after factoring in how many and it's gear

@@ -8,7 +8,7 @@
       gear: [],
       stats: [],
       cost: null,
-      paint_scheme: []
+      paintScheme: []
     };
   */
   
@@ -18,3 +18,19 @@
   //stats is for tracking each stat on a unit (ex. WS,BS,S,T,etc)
   //cost is the total points cost for a given model after factoring in how many and it's gear
   //paint_scheme is used to track which paints were used where and how much paint was appplied
+
+  /***sample model 1***/
+    /*
+      let genestealer = {
+        name: "Genestealer",
+        quantity: 8,
+        gear: [?],
+        stats: [?],
+        cost: ?,
+        paintScheme: [{
+          paintName: "Skeleton Horde",
+          coats: 2,
+          location: "Whole body"
+        }]
+      };
+    */

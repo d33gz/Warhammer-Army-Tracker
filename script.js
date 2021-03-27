@@ -8,7 +8,11 @@
       gear: [],
       stats: [],
       cost: null,
-      paintScheme: []
+      paintScheme: [{
+        paintName: "Skeleton Horde",
+        coats: 2,
+        location: "Whole body"
+      }]
     };
   */
   

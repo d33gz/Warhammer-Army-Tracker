@@ -131,8 +131,48 @@ let army = [
     cost: null,
     paintScheme: [{
       paintName: "Skeleton Horde",
+      paintType: "Contrast",
       coats: 2,
-      location: "Whole body"
-    }]
+      location: "Whole Model"
+    }],
+  },
+  {
+    name: "Liazrd Man with Club",
+    quantity: 6,
+    gear: ["Celestite Club", "Powerful Jaws and Stardrake Shield"],
+    stats: [null],
+    cost: null,
+    paintScheme: [{
+      paintName: "Caledor Sky",
+      paintType: "Base",
+      coats: 2,
+      location: "Body"
+    }],
+  },
+  {
+    name: "Liazrd Man with Stardrake Icon",
+    quantity: 1,
+    gear: ["Stardrake Icon", "Powerful Jaws and Stardrake Shield"],
+    stats: [null],
+    cost: null,
+    paintScheme: [{
+      paintName: "Caledor Sky",
+      paintType: "Base",
+      coats: 2,
+      location: "Body"
+    }],
+  },
+  {
+    name: "Liazrd Man with Wardrum",
+    quantity: 1,
+    gear: ["Wardrum", "Powerful Jaws and Stardrake Shield"],
+    stats: [null],
+    cost: null,
+    paintScheme: [{
+      paintName: "Caledor Sky",
+      paintType: "Base",
+      coats: 2,
+      location: "Body"
+    }],
   }
 ];

@@ -129,12 +129,20 @@ let army = [
     gear: [null],
     stats: [null],
     cost: null,
-    paintScheme: [{
+    paintScheme: [
+      {
+        paintName: "Wraithbone",
+        paintType: "Spray Paint",
+        coats: null,
+        location: null
+      },
+      {
       paintName: "Skeleton Horde",
       paintType: "Contrast",
       coats: 2,
       location: "Whole Model"
-    }],
+      }
+    ]
   },
   {
     name: "Lizard Man with Club",
@@ -142,12 +150,20 @@ let army = [
     gear: ["Celestite Club", "Powerful Jaws and Stardrake Shield"],
     stats: [null],
     cost: null,
-    paintScheme: [{
+    paintScheme: [
+      {
+      paintName: "Grey Seer",
+      paintType: "Spray Paint",
+      coats: null,
+      location: null
+      },
+      {
       paintName: "Caledor Sky",
       paintType: "Base",
       coats: 2,
       location: "Body"
-    }],
+      }
+    ]
   },
   {
     name: "Lizard Man with Stardrake Icon",
@@ -155,12 +171,20 @@ let army = [
     gear: ["Stardrake Icon", "Powerful Jaws and Stardrake Shield"],
     stats: [null],
     cost: null,
-    paintScheme: [{
+    paintScheme: [
+      {
+      paintName: "Grey Seer",
+      paintType: "Spray Paint",
+      coats: null,
+      location: null
+      },
+      {
       paintName: "Caledor Sky",
       paintType: "Base",
       coats: 2,
       location: "Body"
-    }],
+      }
+    ]
   },
   {
     name: "Lizard Man with Wardrum",
@@ -168,11 +192,19 @@ let army = [
     gear: ["Wardrum", "Powerful Jaws and Stardrake Shield"],
     stats: [null],
     cost: null,
-    paintScheme: [{
+    paintScheme: [
+      {
+      paintName: "Grey Seer",
+      paintType: "Spray Paint",
+      coats: null,
+      location: null
+      },
+      {
       paintName: "Caledor Sky",
       paintType: "Base",
       coats: 2,
       location: "Body"
-    }],
+      }
+    ]
   }
 ];

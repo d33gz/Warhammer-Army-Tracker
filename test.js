@@ -137,7 +137,7 @@ let army = [
     }],
   },
   {
-    name: "Liazrd Man with Club",
+    name: "Lizard Man with Club",
     quantity: 6,
     gear: ["Celestite Club", "Powerful Jaws and Stardrake Shield"],
     stats: [null],
@@ -150,7 +150,7 @@ let army = [
     }],
   },
   {
-    name: "Liazrd Man with Stardrake Icon",
+    name: "Lizard Man with Stardrake Icon",
     quantity: 1,
     gear: ["Stardrake Icon", "Powerful Jaws and Stardrake Shield"],
     stats: [null],
@@ -163,7 +163,7 @@ let army = [
     }],
   },
   {
-    name: "Liazrd Man with Wardrum",
+    name: "Lizard Man with Wardrum",
     quantity: 1,
     gear: ["Wardrum", "Powerful Jaws and Stardrake Shield"],
     stats: [null],
